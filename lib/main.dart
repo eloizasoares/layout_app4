@@ -44,7 +44,7 @@ class TelaDashboard extends StatelessWidget {
             ),
             const SizedBox(height: 16.0),
 
-            // LINHA 1: Cards Lado a Lado usando Expanded
+            // EXERCÍCIO 01: 3 Cards Lado a Lado com Expanded
             Row(
               children: [
                 Expanded(
@@ -64,7 +64,7 @@ class TelaDashboard extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(width: 12.0),
+                const SizedBox(width: 8.0),
                 Expanded(
                   child: Container(
                     padding: const EdgeInsets.all(16.0),
@@ -82,6 +82,24 @@ class TelaDashboard extends StatelessWidget {
                     ),
                   ),
                 ),
+                const SizedBox(width: 8.0),
+                Expanded(
+                  child: Container(
+                    padding: const EdgeInsets.all(16.0),
+                    decoration: BoxDecoration(
+                      color: Colors.teal.shade100,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Column(
+                      children: const [
+                        Icon(Icons.camera_alt, size: 36, color: Colors.teal),
+                        SizedBox(height: 8),
+                        Text('45', style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+                        Text('Fotos', style: TextStyle(fontSize: 12, color: Colors.grey)),
+                      ],
+                    ),
+                  ),
+                ),
               ],
             ),
             const SizedBox(height: 24.0),
@@ -92,7 +110,7 @@ class TelaDashboard extends StatelessWidget {
             ),
             const SizedBox(height: 16.0),
 
-            // SOBREPOSICAO usando Stack
+            // SOBREPOSIÇÃO usando Stack
             Stack(
               clipBehavior: Clip.none,
               children: [
