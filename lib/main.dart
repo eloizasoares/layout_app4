@@ -36,8 +36,7 @@ class TelaDashboard extends StatelessWidget {
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(
-          // EXERCÍCIO 02: Alinhamento alterado para center
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
               'Resumo das Observacoes',
@@ -151,6 +150,37 @@ class TelaDashboard extends StatelessWidget {
                   ),
                 ),
               ],
+            ),
+
+            // EXERCÍCIO 03: Seção Últimos Registros
+            const SizedBox(height: 24.0),
+            const Text(
+              'Ultimos Registros',
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 16.0),
+            Container(
+              padding: const EdgeInsets.all(16.0),
+              decoration: BoxDecoration(
+                color: Colors.grey.shade100,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: const [
+                      Icon(Icons.list, color: Colors.teal),
+                      SizedBox(width: 8.0),
+                      Text('Registro de Atividades', style: TextStyle(fontWeight: FontWeight.bold)),
+                    ],
+                  ),
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: const Text('Ver Tudo'),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
