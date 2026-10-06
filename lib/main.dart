@@ -1,170 +1,52 @@
 import 'package:flutter/material.dart';
+// Importação do widget customizado que criaste na pasta widgets:
+import 'widgets/bloco_estatistica.dart';
 
 void main() {
-  runApp(const MeuLayoutApp());
+  runApp(const MyApp());
 }
 
-class MeuLayoutApp extends StatelessWidget {
-  const MeuLayoutApp({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'PPDM - Layout Widgets',
+      title: 'Layout App',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
-      home: const TelaDashboard(),
+      home: const HomePage(),
     );
   }
 }
 
-class TelaDashboard extends StatelessWidget {
-  const TelaDashboard({super.key});
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('PPDM - Dashboard de Observacoes'),
-        centerTitle: true,
-        backgroundColor: Colors.teal,
-        foregroundColor: Colors.white,
+        title: const Text('Estatísticas'),
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text(
-              'Resumo das Observacoes',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 16.0),
+          children: const [
+            // Aqui é chamada a primeira linha extraída para o teu widget customizado:
+            BlocoEstatistica(),
 
-            Row(
-              children: [
-                Expanded(
-                  child: Container(
-                    padding: const EdgeInsets.all(16.0),
-                    decoration: BoxDecoration(
-                      color: Colors.teal.shade100,
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Column(
-                      children: const [
-                        Icon(Icons.flutter_dash, size: 36, color: Colors.teal),
-                        SizedBox(height: 8),
-                        Text('124', style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
-                        Text('Aves Vistas', style: TextStyle(fontSize: 12, color: Colors.grey)),
-                      ],
-                    ),
-                  ),
-                ),
-                const SizedBox(width: 8.0),
-                Expanded(
-                  child: Container(
-                    padding: const EdgeInsets.all(16.0),
-                    decoration: BoxDecoration(
-                      color: Colors.teal.shade50,
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Column(
-                      children: const [
-                        Icon(Icons.place, size: 36, color: Colors.teal),
-                        SizedBox(height: 8),
-                        Text('18', style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
-                        Text('Locais Visitados', style: TextStyle(fontSize: 12, color: Colors.grey)),
-                      ],
-                    ),
-                  ),
-                ),
-                const SizedBox(width: 8.0),
-                Expanded(
-                  child: Container(
-                    padding: const EdgeInsets.all(16.0),
-                    decoration: BoxDecoration(
-                      color: Colors.teal.shade100,
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Column(
-                      children: const [
-                        Icon(Icons.camera_alt, size: 36, color: Colors.teal),
-                        SizedBox(height: 8),
-                        Text('45', style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
-                        Text('Fotos', style: TextStyle(fontSize: 12, color: Colors.grey)),
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(height: 24.0),
+            SizedBox(height: 20),
 
-            const Text(
-              'Destaque da Semana',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 16.0),
-
-            Stack(
-              clipBehavior: Clip.none,
-              children: [
-                Card(
-                  elevation: 4,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(20.0),
-                    child: Row(
-                      children: [
-                        const Icon(Icons.star, size: 48, color: Colors.amber),
-                        const SizedBox(width: 16),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: const [
-                            Text('Gaviao-Real', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-                            Text('Avistado no Parque Central', style: TextStyle(color: Colors.grey)),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Positioned(
-                  top: -8,
-                  right: -8,
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                    decoration: BoxDecoration(
-                      color: Colors.red,
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: const Text(
-                      'Raro',
-                      style: TextStyle(color: Colors.white, fontSize: 10, fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                ),
-                Positioned(
-                  bottom: -8,
-                  left: -8,
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                    decoration: BoxDecoration(
-                      color: Colors.green,
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: const Text(
-                      'Confirmado',
-                      style: TextStyle(color: Colors.white, fontSize: 10, fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                ),
-              ],
+            // Conteúdo adicional do ecrã (se houver):
+            Text(
+              'Outros Conteúdos',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
           ],
         ),
