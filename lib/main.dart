@@ -112,26 +112,26 @@ class TelaDashboard extends StatelessWidget {
             Stack(
               clipBehavior: Clip.none,
               children: [
-                Container(
-                  width: double.infinity,
-                  padding: const EdgeInsets.all(20.0),
-                  decoration: BoxDecoration(
-                    color: Colors.grey.shade100,
+                Card(
+                  elevation: 4,
+                  shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
-                    border: Border.all(color: Colors.grey.shade300),
                   ),
-                  child: Row(
-                    children: [
-                      const Icon(Icons.star, size: 48, color: Colors.amber),
-                      const SizedBox(width: 16),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
-                          Text('Gaviao-Real', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-                          Text('Avistado no Parque Central', style: TextStyle(color: Colors.grey)),
-                        ],
-                      ),
-                    ],
+                  child: Padding(
+                    padding: const EdgeInsets.all(20.0),
+                    child: Row(
+                      children: [
+                        const Icon(Icons.star, size: 48, color: Colors.amber),
+                        const SizedBox(width: 16),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: const [
+                            Text('Gaviao-Real', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                            Text('Avistado no Parque Central', style: TextStyle(color: Colors.grey)),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 Positioned(
