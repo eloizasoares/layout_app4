@@ -1,41 +1,36 @@
 import 'package:flutter/material.dart';
 
 class BlocoEstatistica extends StatelessWidget {
-  const BlocoEstatistica({super.key});
+  final IconData icon;
+  final String valor;
+  final String titulo;
+  final Color corFundo;
+
+  const BlocoEstatistica({
+    super.key,
+    required this.icon,
+    required this.valor,
+    required this.titulo,
+    required this.corFundo,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Expanded(
-          child: Card(
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                children: const [
-                  Text('Card 1', style: TextStyle(fontWeight: FontWeight.bold)),
-                  SizedBox(height: 8),
-                  Text('100'),
-                ],
-              ),
-            ),
-          ),
-        ),
-        Expanded(
-          child: Card(
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                children: const [
-                  Text('Card 2', style: TextStyle(fontWeight: FontWeight.bold)),
-                  SizedBox(height: 8),
-                  Text('200'),
-                ],
-              ),
-            ),
-          ),
-        ),
-      ],
+    return Container(
+      padding: const EdgeInsets.all(16.0),
+      decoration: BoxDecoration(
+        color: corFundo,
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Icon(icon, size: 36, color: Colors.teal),
+          const SizedBox(height: 8),
+          Text(valor, style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+          Text(titulo, style: const TextStyle(fontSize: 12, color: Colors.grey)),
+        ],
+      ),
     );
   }
 }
