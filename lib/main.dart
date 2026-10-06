@@ -46,12 +46,57 @@ class TelaDashboard extends StatelessWidget {
 
             Row(
               children: [
-                Container(
-                  padding: const EdgeInsets.all(16.0),
-                  color: Colors.amber.shade100,
-                  child: const Text(
-                    'TEXTO EXTREMAMENTE LONGO DENTRO DA ROW SEM EXPANDED PARA FORCAR O ERRO DE OVERFLOW DE RENDERFLEX NO FLUTTER',
-                    style: TextStyle(fontSize: 18),
+                Expanded(
+                  child: Container(
+                    padding: const EdgeInsets.all(16.0),
+                    decoration: BoxDecoration(
+                      color: Colors.teal.shade100,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Column(
+                      children: const [
+                        Icon(Icons.flutter_dash, size: 36, color: Colors.teal),
+                        SizedBox(height: 8),
+                        Text('124', style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+                        Text('Aves Vistas', style: TextStyle(fontSize: 12, color: Colors.grey)),
+                      ],
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 8.0),
+                Expanded(
+                  child: Container(
+                    padding: const EdgeInsets.all(16.0),
+                    decoration: BoxDecoration(
+                      color: Colors.teal.shade50,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Column(
+                      children: const [
+                        Icon(Icons.place, size: 36, color: Colors.teal),
+                        SizedBox(height: 8),
+                        Text('18', style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+                        Text('Locais Visitados', style: TextStyle(fontSize: 12, color: Colors.grey)),
+                      ],
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 8.0),
+                Expanded(
+                  child: Container(
+                    padding: const EdgeInsets.all(16.0),
+                    decoration: BoxDecoration(
+                      color: Colors.teal.shade100,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Column(
+                      children: const [
+                        Icon(Icons.camera_alt, size: 36, color: Colors.teal),
+                        SizedBox(height: 8),
+                        Text('45', style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+                        Text('Fotos', style: TextStyle(fontSize: 12, color: Colors.grey)),
+                      ],
+                    ),
                   ),
                 ),
               ],
@@ -100,6 +145,21 @@ class TelaDashboard extends StatelessWidget {
                     ),
                     child: const Text(
                       'Raro',
+                      style: TextStyle(color: Colors.white, fontSize: 10, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ),
+                Positioned(
+                  bottom: -8,
+                  left: -8,
+                  child: Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                    decoration: BoxDecoration(
+                      color: Colors.green,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: const Text(
+                      'Confirmado',
                       style: TextStyle(color: Colors.white, fontSize: 10, fontWeight: FontWeight.bold),
                     ),
                   ),
